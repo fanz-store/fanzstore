@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fanz Store</title>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <style>
+
+    :root {
+      --accent: #9b5de5;
+      --accent-2: #7b3bd3;
+      --muted:#9aa0b0;
+      --text-dark: #222;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #fff;
+      color: var(--text-dark);
+    }
+
+    /* 🔝 HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 25px;
+      background: #fff;
+      border-bottom: 2px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 18px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .brand p {
+      margin: 0;
+      font-size: 12px;
+      color: #fff;
+    }
+
+    .right-text {
+      font-weight: 600;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    /* 🛍️ PRODUK */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      padding: 25px;
+      border: 1.5px solid #f0f0f0;
+      transition: all 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 22px rgba(155, 93, 229, 0.25);
+    }
+
+    .card h3 {
+      color: var(--text-dark);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: #555;
+      font-weight: 500;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 16px;
+    }
+
+    .robux-icon {
+      background-color: var(--accent);
+      color: white;
+      border-radius: 50%;
+      padding: 6px 9px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .btn {
+      background-color: var(--accent);
+      color: #fff;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      color: #7b3bd3;
+      background-color: var(--accent-dark);
+      box-shadow: 0 4px 10px rgba(155, 93, 229, 0.3);
+      transform: scale(1.05);
+    }
+
+    /* 💳 PEMBAYARAN */
+    .payment-section {
+      display: none;
+      text-align: center;
+      padding: 35px 20px;
+      color: black;
+      background: #fafafa;
+      border-top: 2px solid var(--accent);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .payment-section img {
+      width: 250px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"] {
+      width: 80%;
+      max-width: 320px;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline-color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1.5px solid #eee;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    
+    .topbar{display:flex;align-items:center;gap:16px;padding:14px 20px;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 6px 20px rgba(107,70,193,0.18)}
+  </style>
+</head>
+<body>
+  <!-- 🧭 Header -->
+  <header class="topbar">
+    <div class="logo">
+      <img src="logof2.png" alt="Fanz Store Logo" />
+      <div class="brand">
+        <h1>Fanz Store</h1>
+        <p>Robux Termurah & Cepat Masuk Pending</p>
+      </div>
+    </div>
+    <div class="right-text">Robux — Gamepass</div>
+  </header>
+
+  <!-- 🛍️ Produk -->
+  <section class="products">
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <h3>50 Robux</h3>
+      <p class="price"><span class="robux-icon">R$</span>Rp7.500</p>
+      <button class="btn" onclick="showPayment('50 Robux', 7500)">Beli Sekarang</button>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <h3>80 Robux</h3>
+      <p class="price"><span class="robux-icon">R$</span>Rp11.400</p>
+      <button class="btn" onclick="showPayment('80 Robux', 11400)">Beli Sekarang</button>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="300">
+      <h3>100 Robux</h3>
+      <p class="price"><span class="robux-icon">R$</span>Rp14.000</p>
+      <button class="btn" onclick="showPayment('100 Robux', 14000)">Beli Sekarang</button>
+    </div>
+  </section>
+
+  <!-- 💳 Pembayaran -->
+  <section class="payment-section" id="payment">
+    <h2>Pembayaran</h2>
+    <p>Silakan scan QRIS di bawah ini dan isi nominal sesuai pesanan:</p>
+    <img src="qris.jpg" alt="QRIS Fanz Store" />
+    <form id="paymentForm">
+      <input type="text" id="username" placeholder="Masukkan Username Roblox" required /><br />
+      <input type="number" id="quantity" placeholder="Masukkan Kelipatan (cth: 2)" value="1" min="1" required />
+      <h4 id="subtotal">Subtotal: Rp0</h4>
+      <button type="button" class="btn" onclick="sendToWhatsApp()">Kirim ke WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- ⚓ Footer -->
+  <footer>© 2025 Fanz Store | All Rights Reserved</footer>
+
+  <!-- ⚙️ Script -->
+  <script>
+    AOS.init();
+    let selectedProduct = "";
+    let basePrice = 0;
+
+    function showPayment(product, price) {
+      selectedProduct = product;
+      basePrice = price;
+      document.getElementById("payment").style.display = "block";
+      updateSubtotal();
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+
+    function updateSubtotal() {
+      const qty = document.getElementById("quantity").value || 1;
+      const subtotal = basePrice * qty;
+      document.getElementById("subtotal").innerText =
+        "Subtotal: Rp" + subtotal.toLocaleString("id-ID");
+    }
+
+    document.getElementById("quantity").addEventListener("input", updateSubtotal);
+
+    async function sendToWhatsApp() {
+      const username = document.getElementById("username").value.trim();
+      const qty = document.getElementById("quantity").value || 1;
+
+      if (!username){
+        alert("Isi semua data!");
+        return;
+      }
+
+
+      const subtotal = basePrice * qty;
+      const message = `Halo Fanz Store 👋
+Saya ingin order:
+• Produk: ${selectedProduct}
+• Jumlah: ${qty}x
+• Total: Rp${subtotal.toLocaleString("id-ID")}
+• Username Roblox: ${username}`;
+
+      const phone = "6288985665999";
+      const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, "_blank");
+    }
+  </script>
+</body>
+</html>
